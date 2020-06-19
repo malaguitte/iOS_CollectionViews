@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
     var itemToShow: Item?
     
     //happens once
@@ -22,8 +23,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let itemTitle = itemToShow?.title {
-            print(itemTitle)
+        if let item = itemToShow {
+            let info = "The current item info: \n\nTitle: '\(item.title)'\n\nDescription: '\(item.description)'"
+            textView.text = info
         }
         
     }
