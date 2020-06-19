@@ -10,11 +10,39 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    let NUMBER_OF_SECTIONS: Int = 1
+    let NUMBER_OF_ITEMS_PER_SECTION: Int = 20
+    let NUMBER_OF_ITEMS_PER_ROW: CGFloat = 4
+    let ITEM_PADDING: CGFloat = 5
+    var itemSize: CGSize = CGSize(width: 0, height: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            //calculate padding
+            let totalPadding: CGFloat = ITEM_PADDING * (NUMBER_OF_ITEMS_PER_ROW - 1)
+            let individualPadding: CGFloat = totalPadding / NUMBER_OF_ITEMS_PER_ROW
+            
+            //calculate item size
+            let width = collectionView.frame.width / NUMBER_OF_ITEMS_PER_ROW - individualPadding
+            let height = width
+          
+            //setting layout properties
+            layout.minimumLineSpacing = ITEM_PADDING
+            layout.minimumInteritemSpacing = 0
+            layout.estimatedItemSize = itemSize //workaround to make the cells render properly
+            
+            //set item size
+            itemSize = CGSize(width: width, height: height)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return itemSize
     }
 
     /*
@@ -30,20 +58,21 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return NUMBER_OF_SECTIONS
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return NUMBER_OF_ITEMS_PER_SECTION
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
+        if let c = cell as? CollectionViewCell {
+            let number = indexPath.row + 1
+            c.label.text = "\(number)"
+        }
     
         return cell
     }

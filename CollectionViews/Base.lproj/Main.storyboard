@@ -45,7 +45,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-Yp-oxn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-oh-NIb">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -54,15 +54,16 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="aJm-Yp-oxn" secondAttribute="bottom" id="Jmj-od-3UE"/>
-                                        <constraint firstItem="aJm-Yp-oxn" firstAttribute="top" secondItem="sRk-vO-YSl" secondAttribute="top" id="a18-fg-DrX"/>
-                                        <constraint firstItem="aJm-Yp-oxn" firstAttribute="leading" secondItem="sRk-vO-YSl" secondAttribute="leading" id="g2m-4D-Zzd"/>
-                                        <constraint firstAttribute="trailing" secondItem="aJm-Yp-oxn" secondAttribute="trailing" id="wEa-fp-Yec"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wfe-oh-NIb" secondAttribute="trailing" id="E5A-A3-gUU"/>
+                                        <constraint firstItem="Wfe-oh-NIb" firstAttribute="top" secondItem="sRk-vO-YSl" secondAttribute="top" id="XlY-rW-KUR"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wfe-oh-NIb" secondAttribute="bottom" id="hp8-I8-CqR"/>
+                                        <constraint firstItem="Wfe-oh-NIb" firstAttribute="leading" secondItem="sRk-vO-YSl" secondAttribute="leading" id="wdK-6c-Sya"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="140" height="140"/>
                                 <connections>
-                                    <outlet property="label" destination="aJm-Yp-oxn" id="BbU-a3-pcW"/>
+                                    <outlet property="label" destination="Wfe-oh-NIb" id="fda-o9-RV2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
