@@ -27,7 +27,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     var itemSize: CGSize = CGSize(width: 0, height: 0)
     var items: [Item] = []
-    var currentitem: Item? //might be nil
+    var currentItem: Item? //might be nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
     // MARK: - Navigation
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        currentitem = items[indexPath.row] //get clicked item and set as current
+        currentItem = items[indexPath.row] //get clicked item and set as current
         performSegue(withIdentifier: SEGUE_ID, sender: nil)
     }
 
@@ -85,7 +85,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if let viewController = segue.destination as? ViewController {
-            viewController.itemToShow = currentitem
+            viewController.itemToShow = currentItem
         }
     }
 
