@@ -14,6 +14,7 @@
 		7125426E249CD00D004723DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7125426D249CD00D004723DA /* Assets.xcassets */; };
 		71254271249CD00D004723DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7125426F249CD00D004723DA /* LaunchScreen.storyboard */; };
 		71254279249CD06B004723DA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71254278249CD06B004723DA /* CollectionViewController.swift */; };
+		7125427B249CD0DC004723DA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125427A249CD0DC004723DA /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		71254270249CD00D004723DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71254272249CD00D004723DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71254278249CD06B004723DA /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		7125427A249CD0DC004723DA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				71254266249CD00C004723DA /* SceneDelegate.swift */,
 				71254268249CD00C004723DA /* ViewController.swift */,
 				71254278249CD06B004723DA /* CollectionViewController.swift */,
+				7125427A249CD0DC004723DA /* CollectionViewCell.swift */,
 				7125426A249CD00C004723DA /* Main.storyboard */,
 				7125426D249CD00D004723DA /* Assets.xcassets */,
 				7125426F249CD00D004723DA /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7125427B249CD0DC004723DA /* CollectionViewCell.swift in Sources */,
 				71254279249CD06B004723DA /* CollectionViewController.swift in Sources */,
 				71254269249CD00C004723DA /* ViewController.swift in Sources */,
 				71254265249CD00C004723DA /* AppDelegate.swift in Sources */,
