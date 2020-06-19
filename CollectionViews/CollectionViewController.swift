@@ -10,13 +10,20 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+struct Item {
+    var title: String
+    var description: String
+}
+
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    // Constants
     let NUMBER_OF_SECTIONS: Int = 1
-    let NUMBER_OF_ITEMS_PER_SECTION: Int = 20
     let NUMBER_OF_ITEMS_PER_ROW: CGFloat = 4
     let ITEM_PADDING: CGFloat = 5
+    
     var itemSize: CGSize = CGSize(width: 0, height: 0)
+    var items: [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,23 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             //set item size
             itemSize = CGSize(width: width, height: height)
         }
+        
+        items.append(contentsOf: self.getItems())
+    }
+    
+    func getItems() -> [Item] {
+        return [
+            Item(title: "Item 1", description: "Description for item 1"),
+            Item(title: "Item 2", description: "Description for item 2"),
+            Item(title: "Item 3", description: "Description for item 3"),
+            Item(title: "Item 4", description: "Description for item 4"),
+            Item(title: "Item 5", description: "Description for item 5"),
+            Item(title: "Item 6", description: "Description for item 6"),
+            Item(title: "Item 7", description: "Description for item 7"),
+            Item(title: "Item 8", description: "Description for item 8"),
+            Item(title: "Item 9", description: "Description for item 9"),
+            Item(title: "Item 10", description: "Description for item 10")
+        ]
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -63,15 +87,15 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NUMBER_OF_ITEMS_PER_SECTION
+        return items.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         if let c = cell as? CollectionViewCell {
-            let number = indexPath.row + 1
-            c.label.text = "\(number)"
+            let cellText = items[indexPath.row].title
+            c.label.text = "\(cellText)"
         }
     
         return cell
